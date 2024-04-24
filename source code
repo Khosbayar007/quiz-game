@@ -1,0 +1,290 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int Guess;
+int Total;
+
+// Question Class
+class Question {
+private:
+    string Question_Text;
+    string Answer_1;
+    string Answer_2;
+    string Answer_3;
+    string Answer_4;
+    int Correct_Answer;
+    int Question_Score;
+
+public:
+    // Setter Function
+    void setValues(string, string,
+                   string, string,
+                   string, int, int);
+
+    // Function to ask questions
+    void askQuestion();
+};
+
+// Driver code
+int main()
+{
+    cout << "\n\n\t\t\t\tTHE DAILY QUIZ"
+         << endl;
+    cout << "\nPress Enter to start "
+         << "the quiz... " << endl;
+
+    // Input
+    cin.get();
+
+    string Name;
+    int Age;
+
+    // Input the details
+    cout << "What is your name?"
+         << endl;
+    cin >> Name;
+    cout << endl;
+
+    cout << "How old are you?"
+         << endl;
+    cin >> Age;
+    cout << endl;
+
+    string Respond;
+    cout << "Are you ready to take"
+         << " the quiz " << Name
+         << "? yes/no" << endl;
+    cin >> Respond;
+
+    if (Respond == "yes") {
+        cout << endl;
+        cout << "Good Luck!" << endl;
+    }
+    else {
+        cout << "Okay Good Bye!" << endl;
+        return 0;
+    }
+
+    // Choose difficulty level
+    cout << "Choose difficulty level:" << endl;
+    cout << "1. Easy" << endl;
+    cout << "2. Medium" << endl;
+    cout << "3. Hard" << endl;
+    int difficulty;
+    cin >> difficulty;
+
+    // Objects of Question Class
+    Question q1;
+    Question q2;
+    Question q3;
+    Question q4;
+    Question q5;
+    Question q6;
+    Question q7;
+    Question q8;
+    Question q9;
+    Question q10;
+
+    if (difficulty == 1) {
+        q1.setValues("Easy Question 1 :In which hall we are currently studying? ", "Griffin",
+                     "Holmes", "Merwin",
+                     "Whitaker", 2, 10);
+        q2.setValues("Easy Question 2 : What is the largest mammal in the world? ", "Elephant",
+                     "Polar bear", "Gi"
+                                   "raffe",
+                     "Blue whale", 4, 10);
+        q3.setValues("Easy Question 3 : Which is the longest river in the world? ", "Amazon",
+                     "Mississippi", "Yangtze",
+                     "Nile", 4, 10);
+        q4.setValues("Easy Question 4 : How many legs does spider have? ", "10",
+                     "99", "8",
+                     "4", 3, 10);
+        q5.setValues("Easy Question 5 : What is the capital of Japan? ", "Tokyo",
+                     "Hiroshima", "Kyoto",
+                     "Osaka", 1, 10);
+        q6.setValues("Easy Question 6 : What is the largest ocean in the world? ", "Atlantic",
+                     "Pacific", "Indian",
+                     "Arctic", 2, 10);
+        q7.setValues("Easy Question 7 : Which animal is known as the King of the Jungle? ", "Tiger",
+                     "Cheetah", "Human",
+                     "Lion", 4, 10);
+        q8.setValues("Easy Question 8 : Who wrote the Happy Potter series? ", "Stephen King",
+                     "George R.R. Martin", "J.K. Rowling",
+                     "J.R.R. Tolkien", 3, 10);
+        q9.setValues("Easy Question 9 : Which planet is known as the Red Planet? ", "Mars",
+                     "Jupiter", "Venus",
+                     "Saturn", 1, 10);
+        q10.setValues("Easy Question 10 : Which continent is the largest by land area? ", "Europe",
+                     "North America", "Yangtze",
+                     "Nile", 3, 10);
+
+    }
+    else if (difficulty == 2) {
+        q1.setValues("Medium Question 1 : Which is the capital of Australia? ", "Sydney",
+                     "Canberra", "Melbourne",
+                     "Brisbane", 2, 10);
+        q2.setValues("Medium Question 2 : Who wrote the novel Pride and Prejudice? ", "Charles Dickens",
+                     "Jane Austen", "Emily Brontë",
+                     "Virginia Woolf", 2, 10);
+        q3.setValues("Medium Question 3 : Which planet is closest to the Sun?", "Venus",
+                     "Mars", "Mercury",
+                     "Jupiter", 3, 10);
+        q4.setValues("Medium Question 4 : What is the chemical symbol for gold?", "Au",
+                     "Ag", "Fe",
+                     "Cu", 1, 10);
+        q5.setValues("Medium Question 5 : What is the national animal of China?", "Panda",
+                     "Dragon", "Tiger",
+                     "Monkey", 1, 10);
+        q6.setValues("Medium Question 6 : In which year did the Titanic sink? ", "1908",
+                     "1912", "1923",
+                     "1931", 2, 10);
+        q7.setValues("Medium Question 7 : Who was the first person to set foot on the moon?", "Buzz Aldrin",
+                     "Michael Collins", "Neil Armstrong",
+                     "Yuri Gagarin", 3, 10);
+        q8.setValues("Medium Question 8 : Which of the following is NOT a primary color? ", "Red",
+                     "Yellow", "Blue",
+                     "Green", 2, 10);
+        q9.setValues("Medium Question 9 : What is the first animal to ever be cloned? ", "Sheep",
+                     "Monkey", "Mice",
+                     "Rabbit", 1, 10);
+        q10.setValues("Medium Question 10 : The unicorn is the national animal of which country?", "Switzerland",
+                      "Belgium", "Sweden",
+                      "Scotland", 4, 10);
+    }
+    else if (difficulty == 3) {
+        q1.setValues("Hard Question 1 : In which year was the first email sent over the ARPANET, the precursor to the internet? ", "1971",
+                     "1969", "1973",
+                     "1976", 2, 10);
+        q2.setValues("Hard Question 2 : \n" "Which element has the highest melting point?", "Carbon",
+                     "Tungsten", "Titanium",
+                     "Platinum", 2, 10);
+        q3.setValues("Hard Question 3 : What is the rarest blood type among humans?", "AB-Positive",
+                     "A-Negative", "B-Positive",
+                     "O-Negative", 4, 10);
+        q4.setValues("Hard Question 4 : Which planet in our solar system has the longest day?", "Venus",
+                     "Jupiter", "Mercury",
+                     "Mars", 1, 10);
+        q5.setValues("Hard Question 5 : What is the rarest M&M color?", "Brown",
+                     "Red", "Purple",
+                     "Orange", 3, 10);
+        q6.setValues("Hard Question 6 : What is the driest place on Earth? ", "Atacama Desert",
+                     "Sahara Desert", "Death Valley",
+                     "Antarctica", 1, 10);
+        q7.setValues("Hard Question 7 : Who is credited with the invention of the World Wide Web?", "Tim Berners-Lee",
+                     "Al Gore", "Steve Jobs",
+                     "Bill Gates", 1, 10);
+        q8.setValues("Hard Question 8 : Who was the first woman to win a Nobel Prize? ", "Marie Curie",
+                     "Rosalind Franklin", "Dorothy Hodgkin",
+                     "Jane Goodall", 1, 10);
+        q9.setValues("Hard Question 9 :  In what year did the Berlin Wall fall? ", "1985",
+                     "1989", "1991",
+                     "1993", 2, 10);
+        q10.setValues("Hard Question 10 : Which snake is considered the most venomous in the world?", "King Cobra",
+                      "Black Mamba", "Eastern Brown Snake",
+                      "Inland Taipan", 4, 10);
+    }
+    else {
+        cout << "Invalid choice. Exiting quiz." << endl;
+        return 0;
+    }
+
+    q1.askQuestion();
+    q2.askQuestion();
+    q3.askQuestion();
+    q4.askQuestion();
+    q5.askQuestion();
+    q6.askQuestion();
+    q7.askQuestion();
+    q8.askQuestion();
+    q9.askQuestion();
+    q10.askQuestion();
+
+
+    // Ask other questions based on difficulty level
+
+    // Display the total score
+    cout << "Total Score = " << Total
+         << " out of 100" << endl;
+
+    // Display the results
+
+    // If the player pass the quiz
+    if (Total >= 70) {
+        cout << "Congrats you passed the"
+             << " quiz!" << endl;
+    }
+
+        // Otherwise
+    else {
+        cout << "Alas! You failed the quiz."
+             << endl;
+        cout << "Better luck next time."
+             << endl;
+    }
+    return 0;
+}
+
+// Function to set the values of
+// the questions
+void Question::setValues(
+        string q, string a1,
+        string a2, string a3,
+        string a4, int ca, int pa)
+{
+    Question_Text = q;
+    Answer_1 = a1;
+    Answer_2 = a2;
+    Answer_3 = a3;
+    Answer_4 = a4;
+    Correct_Answer = ca;
+    Question_Score = pa;
+}
+
+// Function to ask questions
+void Question::askQuestion()
+{
+    cout << endl;
+
+    // Print the questions
+    cout << Question_Text << endl;
+    cout << "1. " << Answer_1 << endl;
+    cout << "2. " << Answer_2 << endl;
+    cout << "3. " << Answer_3 << endl;
+    cout << "4. " << Answer_4 << endl;
+    cout << endl;
+
+    // Display the answer
+    cout << "What is your answer?(in number)"
+         << endl;
+    cin >> Guess;
+
+    // If the answer is correct
+    if (Guess == Correct_Answer) {
+        cout << endl;
+        cout << "Correct !" << endl;
+
+        // Update the correct score
+        Total = Total + Question_Score;
+        cout << "Score = " << Question_Score
+             << " out of "
+             << Question_Score
+             << "!" << endl;
+        cout << endl;
+    }
+
+        // Otherwise
+    else {
+        cout << endl;
+        cout << "Wrong !" << endl;
+        cout << "Score = 0"
+             << " out of "
+             << Question_Score
+             << "!" << endl;
+        cout << "Correct answer = "
+             << Correct_Answer
+             << "." << endl;
+        cout << endl;
+    }
+}
+
